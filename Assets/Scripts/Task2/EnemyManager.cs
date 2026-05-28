@@ -39,28 +39,28 @@ public class EnemyManager : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, player.position);
 
-    if (distance <= detectionRange)
-    {
-        playerDetected = true;
-    }
-    else if (!isAlerted)
-    {
-        playerDetected = false;
-    }
+        if (distance <= detectionRange)
+        {
+            playerDetected = true;
+        }
+        else if (!isAlerted)
+        {
+            playerDetected = false;
+        }
     }
 
     protected virtual void AlertNearbyEnemies()
-{
-    EnemyManager[] allEnemies = FindObjectsOfType<EnemyManager>();
-    
-    foreach (EnemyManager enemy in allEnemies)
     {
-        if (enemy != this)
+        EnemyManager[] allEnemies = FindObjectsOfType<EnemyManager>();
+        
+        foreach (EnemyManager enemy in allEnemies)
         {
-            enemy.ReceiveAlert(player.position);
+            if (enemy != this)
+            {
+                enemy.ReceiveAlert(player.position);
+            }
         }
     }
-}
 
     public virtual void ReceiveAlert(Vector3 playerPosition)
     {
@@ -69,19 +69,19 @@ public class EnemyManager : MonoBehaviour
     }
 
     protected virtual void Patrol()
-{
-    float direction = 0f;
-    if (currentTarget.position.x > transform.position.x) direction = 1f;
-    else if (currentTarget.position.x < transform.position.x) direction = -1f;
-
-    rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
-
-    if (Mathf.Abs(transform.position.x - currentTarget.position.x) < 0.2f)
     {
-        if (currentTarget == ptA) currentTarget = ptB;
-        else currentTarget = ptA;
+        float direction = 0f;
+        if (currentTarget.position.x > transform.position.x) direction = 1f;
+        else if (currentTarget.position.x < transform.position.x) direction = -1f;
+
+        rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+
+        if (Mathf.Abs(transform.position.x - currentTarget.position.x) < 0.2f)
+        {
+            if (currentTarget == ptA) currentTarget = ptB;
+            else currentTarget = ptA;
+        }
     }
-}
 
     protected virtual void ChasePlayer()
     {

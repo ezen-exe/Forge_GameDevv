@@ -149,16 +149,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoutManager
   moveSpeed: 3
-  ptA: {fileID: 0}
-  ptB: {fileID: 0}
-  detectionRange: 0
+  ptA: {fileID: 47849131}
+  ptB: {fileID: 580629709}
+  detectionRange: 7
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   player: {fileID: 483896222}
-  scanPoints: []
+  scanPoints:
+  - {fileID: 47849131}
+  - {fileID: 580629709}
   rotationSpeed: 25
-  alertDuration: 0
+  alertDuration: 3
   fieldOfView: 45
 --- !u!4 &19998679
 Transform:
@@ -272,7 +274,7 @@ MonoBehaviour:
   moveSpeed: 3
   ptA: {fileID: 321932927}
   ptB: {fileID: 1894175100}
-  detectionRange: 5
+  detectionRange: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -307,7 +309,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &456645701
 SpriteRenderer:
   serializedVersion: 2
@@ -458,7 +460,7 @@ Transform:
   m_GameObject: {fileID: 483896221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: -0.57, z: 0}
+  m_LocalPosition: {x: 36.06, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -491,7 +493,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &483896224
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -706,7 +708,7 @@ Transform:
   m_GameObject: {fileID: 554242218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: -0.57, z: -1}
+  m_LocalPosition: {x: 36.06, y: -0.14, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -982,7 +984,7 @@ Transform:
   m_GameObject: {fileID: 1270315735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.68, y: -0.57, z: -1}
+  m_LocalPosition: {x: 36.06, y: -0.14, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1192,7 +1194,7 @@ MonoBehaviour:
   moveSpeed: 3
   ptA: {fileID: 1524822646}
   ptB: {fileID: 1224498977}
-  detectionRange: 5
+  detectionRange: 3
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -1225,7 +1227,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1632652480
 SpriteRenderer:
   serializedVersion: 2
